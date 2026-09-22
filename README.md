@@ -1,14 +1,16 @@
 # German Sentences → Anki
 
-Build a low-friction workflow that turns pasted German class material into reviewed Anki sentence cards. The [development brief](brief-german-sentences-anki.md) is the decision record; [pilot inputs](pilot-inputs.md) preserve the examples and their current confirmation status. Source: user conversation, 22 September 2026.
+Build a low-friction workflow that turns pasted German class material into reviewed Anki sentence cards. The [approved brief](brief-german-sentences-anki.md) records scope; the [implementation plan](implementation-plan.md) is the authoritative TODO; [pilot inputs](pilot-inputs.md) preserve examples and confirmation status. Source: user conversation, 22 September 2026.
 
 ## Current state
 
-The brief is drafted; no automation, Anki decks, note type, credentials, or vocabulary database have been created. Anki desktop is the intended creation/review workstation; AnkiMobile on iOS is the study device. The user approves cards in a staging deck before they reach a study deck. Only approved base-form vocabulary enters the separate encountered-word ledger.
+The brief and implementation plan reflect the user's decision on 22 September 2026: use automated ElevenLabs v3 TTS, with inexpensive paid usage acceptable. Only the confirmed German sentence becomes audio; English meanings, grammar, and vocabulary explanations remain text. Each card keeps its randomly selected German voice and generated MP3 across reviews.
+
+No automation, Anki decks, note type, credentials, or vocabulary database have been created. Anki desktop is the creation/review workstation; AnkiMobile on iOS is the study device. The user approves cards in a staging deck before they reach a study deck. Only approved base-form vocabulary enters the separate encountered-word ledger.
 
 ## Next action
 
-Review the brief's assumptions—especially how incomplete fragments are held—and then write the smallest implementation spec for a five-input pilot. Verify Anki-Connect availability and audition German voices before choosing or paying for a TTS provider. Do not ask for or store Anki or TTS passwords here.
+Start implementation with [plan step 0](implementation-plan.md): back up the existing Anki collection with media, verify Anki-Connect locally, and prove one disposable audio card syncs to iOS. Then build the card contract and draft generation, followed by the ElevenLabs v3 adapter and a German voice audition. Configure the API key outside project notes.
 
 ## Later TODO
 
