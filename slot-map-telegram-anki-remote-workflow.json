@@ -1,0 +1,122 @@
+{
+  "_about": "Working brief map for the Telegram to remote processing to Anki feature. Statuses: KNOWN, INFERRED, ASSUMED, MISSING, CONTRADICTED.",
+  "title": "Telegram-triggered remote German sentence workflow",
+  "purpose": "feature spec",
+  "phase": "C",
+  "round": 1,
+  "slots": [
+    {
+      "slot": "WHY",
+      "must_have": true,
+      "status": "KNOWN",
+      "note": "Make regular sentence capture frictionless while preserving the existing review-before-study boundary.",
+      "question": ""
+    },
+    {
+      "slot": "WHO",
+      "must_have": true,
+      "status": "KNOWN",
+      "note": "The user is the sole sender, reviewer, Anki account owner, and product approver; Codex is the implementation collaborator.",
+      "question": ""
+    },
+    {
+      "slot": "WHAT",
+      "must_have": true,
+      "status": "KNOWN",
+      "note": "A researched feature brief for Telegram -> always-reachable server -> card enrichment -> staging -> approved cards in German Sentences v1 and the vocabulary ledger.",
+      "question": ""
+    },
+    {
+      "slot": "WHEN",
+      "must_have": true,
+      "status": "ASSUMED",
+      "note": "No hard deadline; sequence work as research and architecture decision, security design, then a five-sentence end-to-end pilot.",
+      "question": ""
+    },
+    {
+      "slot": "WHERE",
+      "must_have": true,
+      "status": "KNOWN",
+      "note": "Capture happens in Telegram; processing and queue visibility live on the server portal. The user initiates Mac import, edits in Anki, and requests approval in the portal.",
+      "question": ""
+    },
+    {
+      "slot": "HOW",
+      "must_have": true,
+      "status": "KNOWN",
+      "note": "Use an installed Mac helper for user-triggered import and portal approval; never expose AnkiConnect or arbitrary commands. Proposed approval freezes the Browse selection locally, previews it in the portal, then commits only that unchanged set. Native confirmation policy remains open.",
+      "question": ""
+    },
+    {
+      "slot": "RISKS",
+      "must_have": false,
+      "status": "KNOWN",
+      "note": "Forged webhook traffic, bot-token or AI-key leakage, exposing AnkiConnect, unsupported AnkiWeb automation, cross-machine delivery failures, duplicate cards, and silent approval bypass.",
+      "question": ""
+    },
+    {
+      "slot": "USER SEGMENT",
+      "group": "purpose",
+      "must_have": true,
+      "status": "KNOWN",
+      "note": "One authenticated learner using one Telegram bot and the existing German Anki profile/account.",
+      "question": ""
+    },
+    {
+      "slot": "CURRENT BEHAVIOUR",
+      "group": "purpose",
+      "must_have": true,
+      "status": "KNOWN",
+      "note": "Sentences are pasted locally; drafts are generated, staged through local AnkiConnect, reviewed in Anki Browse, and explicitly approved by ID or current Browse selection.",
+      "question": ""
+    },
+    {
+      "slot": "SUCCESS METRIC",
+      "group": "purpose",
+      "must_have": true,
+      "status": "ASSUMED",
+      "note": "Each unique Telegram sentence produces exactly one editable staging item; approved items create the expected Study sentence and suspended ledger notes, with no duplicate or unauthorized writes.",
+      "question": ""
+    },
+    {
+      "slot": "SCOPE AND NON-GOALS",
+      "group": "purpose",
+      "must_have": true,
+      "status": "KNOWN",
+      "note": "MVP supports one authorized private bot chat, text messages, queue/status portal, user-triggered Mac import, Anki editing, and portal approval. Background polling, groups, media capture, multi-user tenancy, portal editing, and replacing Anki sync are deferred.",
+      "question": ""
+    },
+    {
+      "slot": "EDGE CASES",
+      "group": "purpose",
+      "must_have": true,
+      "status": "ASSUMED",
+      "note": "The design must handle corrected or incomplete German, duplicate Telegram updates, retries, server restarts, desktop offline periods, AI/TTS failures, malformed content, unauthorized senders, and partial import/approval.",
+      "question": ""
+    },
+    {
+      "slot": "DEPENDENCIES",
+      "group": "purpose",
+      "must_have": true,
+      "status": "KNOWN",
+      "note": "The trusted Mac and Anki Desktop run periodically, not continuously. The server retains the queue; a user-initiated local pull module may launch Anki, wait for AnkiConnect, import safely, and acknowledge results.",
+      "question": ""
+    },
+    {
+      "slot": "WHO BUILDS",
+      "group": "purpose",
+      "must_have": true,
+      "status": "KNOWN",
+      "note": "Codex implements in this project; the user owns service accounts, hosting choices, credentials, content review, and acceptance.",
+      "question": ""
+    },
+    {
+      "slot": "ROLLOUT AND MEASUREMENT",
+      "group": "purpose",
+      "must_have": true,
+      "status": "ASSUMED",
+      "note": "Run a five-sentence pilot covering normal, corrected, duplicate, offline-desktop, and rejected-authorization cases; audit every transition before enabling daily use.",
+      "question": ""
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "data_dir": ".runtime",
+  "anki_url": "http://127.0.0.1:8765",
+  "model_name": "German Sentences v1",
+  "staging_deck": "German Sentences::Staging",
+  "study_deck": "German Sentences::Study",
+  "vocab_model_name": "German Vocabulary Ledger v1",
+  "vocab_deck": "German Vocabulary Ledger",
+  "codex_command": "codex",
+  "codex_model": "",
+  "voice_ids": [],
+  "tts_model": "eleven_v3",
+  "tts_output_format": "mp3_44100_128",
+  "tts_monthly_character_limit": 30000,
+  "tts_usd_per_1000_characters": 0.10
+}

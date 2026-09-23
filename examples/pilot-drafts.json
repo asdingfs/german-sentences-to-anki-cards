@@ -1,0 +1,73 @@
+{
+  "drafts": [
+    {
+      "source": "Bitte lesen Sie den Brief und markieren Sie die Sätze.",
+      "german": "Bitte lesen Sie den Brief und markieren Sie die Sätze.",
+      "english": "Please read the letter and highlight the sentences.",
+      "grammar": "Polite instructions use the verb followed by Sie: lesen Sie, markieren Sie. Bitte adds 'please'. Both actions take a direct object in the accusative: der Brief becomes den Brief (masculine singular); die Sätze stays die Sätze (plural). The two instructions are joined by und. Mitglieder is not part of this sentence.",
+      "vocabulary": [
+        {"lemma": "lesen", "meaning": "to read", "details": "Infinitive lesen; polite imperative lesen Sie; er/sie liest; past participle gelesen."},
+        {"lemma": "Brief", "meaning": "letter", "details": "der Brief; plural die Briefe; nominative der Brief, accusative den Brief, dative dem Brief, genitive des Briefes."},
+        {"lemma": "markieren", "meaning": "to mark / highlight", "details": "Polite imperative markieren Sie; takes an accusative object; past participle markiert."},
+        {"lemma": "Satz", "meaning": "sentence", "details": "der Satz; plural die Sätze; die Sätze is accusative plural here; dative plural den Sätzen."}
+      ],
+      "needs_confirmation": false,
+      "warnings": []
+    },
+    {
+      "source": "Informationen zum Programm und Einladung zum Jahrestreffen",
+      "german": "Informationen zum Programm und Einladung zum Jahrestreffen",
+      "english": "Information about the programme and an invitation to the annual meeting.",
+      "grammar": "This is a heading, without a finite verb. zum contracts zu + dem. Zu takes the dative; both das Programm and das Jahrestreffen are neuter, so their dative article is dem. Informationen zum Programm means information about the programme; Einladung zum Jahrestreffen means an invitation to the annual meeting.",
+      "vocabulary": [
+        {"lemma": "zu", "meaning": "to / for; about in this context", "details": "Preposition with dative; zu + dem = zum (masculine/neuter), zu + der = zur (feminine)."},
+        {"lemma": "Einladung", "meaning": "invitation", "details": "die Einladung; plural die Einladungen; Einladung zu + dative."},
+        {"lemma": "Jahrestreffen", "meaning": "annual meeting", "details": "das Jahrestreffen; plural die Jahrestreffen; dative dem Jahrestreffen. 'Convention' is possible depending on the event."},
+        {"lemma": "Programm", "meaning": "programme / program", "details": "das Programm; plural die Programme; dative dem Programm."}
+      ],
+      "needs_confirmation": true,
+      "warnings": ["Confirm that this heading is acceptable as a card front; it is not a complete sentence."]
+    },
+    {
+      "source": "und Leute aus der ganzen Welt kennenlernen?",
+      "german": "und Leute aus der ganzen Welt kennenlernen?",
+      "english": "…and meet people from all over the world?",
+      "grammar": "This fragment starts with und and lacks the preceding clause. Aus always takes the dative: die Welt becomes der Welt. After the definite article, ganz takes the weak adjective ending -en in the feminine dative: aus der ganzen Welt. Literally 'from the whole world'; naturally 'from all over the world'. Kennenlernen is an infinitive here; as a finite separable verb: ich lerne Leute kennen.",
+      "vocabulary": [
+        {"lemma": "Leute", "meaning": "people", "details": "die Leute; plural-only noun in this sense; accusative Leute here; dative Leuten."},
+        {"lemma": "kennenlernen", "meaning": "to meet / get to know", "details": "Separable verb: ich lerne … kennen; past participle kennengelernt; takes an accusative object."},
+        {"lemma": "aus", "meaning": "from / out of", "details": "Always followed by dative: aus der Welt, aus dem Haus."},
+        {"lemma": "ganz", "meaning": "whole / entire", "details": "die ganze Welt -> aus der ganzen Welt; -en is the weak adjective ending after der in feminine dative."},
+        {"lemma": "Welt", "meaning": "world", "details": "die Welt; plural die Welten; feminine dative der Welt."}
+      ],
+      "needs_confirmation": true,
+      "warnings": ["The opening und implies missing context. Confirm the fragment as-is or supply the complete sentence."]
+    },
+    {
+      "source": "Fragen und beantworten Sie",
+      "german": "Fragen und beantworten Sie",
+      "english": "Incomplete instruction; intended meaning needs context.",
+      "grammar": "Beantworten normally needs an accusative object: eine Frage beantworten (to answer a question). Antworten can be used without an object, with a dative person (jemandem antworten), or with auf + accusative (auf eine Frage antworten). Fragen und antworten Sie can be a valid instruction meaning 'Ask and respond'. Do not replace the supplied wording without the full exercise context.",
+      "vocabulary": [
+        {"lemma": "beantworten", "meaning": "to answer something", "details": "Takes a direct accusative object: die Frage beantworten; polite imperative beantworten Sie …; past participle beantwortet."}
+      ],
+      "needs_confirmation": true,
+      "warnings": ["Supply the intended full instruction; beantworten is missing its object/context."]
+    },
+    {
+      "source": "In den letzten Tagen, heute onhe Stress",
+      "german": "In den letzten Tagen, heute ohne Stress",
+      "english": "In the last few days; today without stress.",
+      "grammar": "These are time expressions rather than a complete sentence. In den letzten Tagen uses temporal in + dative: die Tage -> den Tagen. Dative plural adds -n to Tage, and letzt- has the adjective ending -en after den. Ohne always takes the accusative; Stress has no article here, so the case is not visible. The supplied onhe is corrected to ohne as discussed.",
+      "vocabulary": [
+        {"lemma": "Tag", "meaning": "day", "details": "der Tag; plural die Tage; dative plural den Tagen; in den letzten Tagen = during the past few days."},
+        {"lemma": "letzt-", "meaning": "last / recent", "details": "Adjective stem: der letzte Tag; in den letzten Tagen has -en after the dative plural article den."},
+        {"lemma": "ohne", "meaning": "without", "details": "Preposition taking accusative: ohne Stress, ohne den Brief."},
+        {"lemma": "Stress", "meaning": "stress", "details": "der Stress; usually uncountable; ohne Stress is accusative without an article."}
+      ],
+      "needs_confirmation": true,
+      "warnings": ["The full intended front is unconfirmed. The spelling correction ohne does not complete the sentence."]
+    }
+  ]
+}
+

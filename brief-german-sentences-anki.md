@@ -21,15 +21,15 @@ When I paste German class material, I need an editable Anki draft before it beco
 
 ## 5. Deliverable and scope
 
-The first build uses a new note type, staging and study decks, and a separate indexed encountered-vocabulary ledger. Each note produces one German-to-English card. Fields: German text/audio, English meaning, grammar, selected vocabulary, searchable base forms, and source/status. The front displays German and plays audio; the back displays English and explanations without English audio.
+The first build uses a sentence note type, staging and study decks, an indexed encountered-vocabulary ledger, and a separate searchable vocabulary note type/deck. Each sentence note produces one German-to-English card. Fields: German text/audio, English meaning, grammar, selected vocabulary, searchable base forms, and source/status. The front displays German and plays audio; the back displays English and explanations without English audio. Approved base forms also become suspended vocabulary notes, which never enter study automatically.
 
 **In scope:** Paste/batch input; translation and targeted grammar; selectable base forms with articles, inflections, and cases; review; deck promotion; duplicate-safe ledger updates; fixed German audio; iOS playback check.  
 **Out of scope:** Telegram input, voice cloning, a custom portal, learned-word status, English audio, and automatic approval.
 
 ## 6. Supporting content
 
-- **Approval:** Edit staged notes in Anki Browse, then move approved cards with Change Deck. The deck move triggers an idempotent ledger update. [Anki Browse](https://docs.ankiweb.net/browsing.html).
-- **Vocabulary:** An indexed SQLite ledger stores approved base forms, meanings, articles, variants/cases, dates, and source-card links. Removing a card explanation does not erase an encounter. Anki Browser search avoids a vocabulary deck initially. [Anki search](https://docs.ankiweb.net/searching).
+- **Approval:** Edit staged notes in Anki Browse, select reviewed notes, then run `approve --selected`. This moves cards into Study and updates the ledger idempotently. Manual Change Deck requires explicit reconciliation. [Anki Browse](https://docs.ankiweb.net/browsing.html).
+- **Vocabulary:** An indexed SQLite ledger stores approved base forms, meanings, articles, variants/cases, dates, and source-card links. The same base forms appear as separate, suspended Anki vocabulary notes for Browser search. Removing a card explanation does not erase an encounter. [Anki search](https://docs.ankiweb.net/searching).
 - **Quality:** [LEO](https://www.leo.org/german-english/) may check words. Explain critical patterns such as *aus + dative*. Flag fragments; never silently complete them.
 
 ## 7. Tone, style and references
@@ -42,7 +42,7 @@ Reference: the user's *aus der ganzen Welt* breakdown in [pilot inputs](pilot-in
 
 ## 8. Constraints and mandatories
 
-Cloud translation and TTS are permitted. Use official APIs, not browser-cookie automation; keep keys out of project notes. Anki-Connect is the local writing path, with text-plus-media import as fallback; AnkiWeb credentials only handle sync. [Anki manual](https://docs.ankiweb.net/sync-server.html); [text import](https://docs.ankiweb.net/importing/text-files.html). Check front audio auto-play on desktop and iOS. [Anki audio options](https://docs.ankiweb.net/deck-options.html).
+Cloud translation and TTS are permitted. Per the user's 22 September decision, generate drafts through the existing ChatGPT/Codex login or this conversation; no separate OpenAI API key. Use the official ElevenLabs API for audio. Keep keys out of project notes. Anki-Connect writes locally; text-plus-media import is the fallback. AnkiWeb handles sync. Check front audio autoplay on desktop/iOS. [Text import](https://docs.ankiweb.net/importing/text-files.html); [audio options](https://docs.ankiweb.net/deck-options.html).
 
 Use the official ElevenLabs API with `model_id: eleven_v3`; inexpensive paid usage is accepted. Only the confirmed German sentence is sent to TTS and attached as front audio. English meanings, grammar, vocabulary explanations, and instructions remain text. Generate, retrieve, and attach MP3 automatically. Audition German voices, randomly select once per card, and retain the file. Cache audio so explanation edits and repeated imports incur no new TTS charge. Track characters, retries, and estimated cost; use the cheapest account option supporting the chosen voices. [Model](https://elevenlabs.io/docs/overview/models); [API](https://elevenlabs.io/docs/api-reference/text-to-speech/convert); [pricing](https://elevenlabs.io/pricing/api). This decision supersedes the earlier Free-only and manual-download proposals; see the [implementation plan](implementation-plan.md) for cost assumptions.
 
@@ -59,10 +59,10 @@ Process about 5 pilot inputs without duplicate notes or ledger entries. Every pr
 Assumed: no fixed deadline; the complete first workflow takes precedence over Telegram. Owner: user.  
 Assumed: the pilot acceptance test is correctness and successful end-to-end movement, not a specified correction-rate threshold. Owner: user.  
 Assumed: incomplete or questionable German may be staged with a warning, but audio and study promotion wait until the exact front is confirmed; this follows the user's correction of the first sample. Owner: user.  
-Assumed: Anki Browser search plus SQLite is sufficient; a separate vocabulary deck is deferred to minimize features. Owner: user.  
+Decided: use a separate, suspended vocabulary deck for searchable approved base forms; a custom portal remains deferred. Owner: user.
 Open: confirm pilot inputs 2–5 before promoting them. Owner: user.  
 Open: audition German voices and configure the account, API key, and usage limit during implementation. Owner: user and Codex.
 
 ## 12. Next step
 
-Implement the ordered [workflow TODO](implementation-plan.md), starting with Anki connectivity and the card contract. Telegram remains deferred.
+Complete the live ElevenLabs audio and desktop/iOS checks in the [workflow TODO](implementation-plan.md), then review and approve the pilot. See the [setup guide](setup/README.md). Telegram remains deferred.

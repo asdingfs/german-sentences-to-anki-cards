@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "german-sentences-anki"
+version = "0.1.0"
+description = "German class sentences to reviewed Anki cards with German-only audio"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.scripts]
+german-anki = "german_anki.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["german_anki*"]
+
